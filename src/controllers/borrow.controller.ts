@@ -5,7 +5,6 @@ import { Borrow } from '../models/borrow.model';
 
 export const borrowRoutes = Router();
 
-// Borrow Book
 borrowRoutes.post('/', async (req: Request, res: Response) => {
   try {
     const { book: bookId, quantity, dueDate } = req.body;
@@ -46,7 +45,6 @@ borrowRoutes.post('/', async (req: Request, res: Response) => {
   }
 });
 
-// Borrowed Books Summary
 borrowRoutes.get('/', async (req: Request, res: Response) => {
   try {
     const summary = await Borrow.aggregate([

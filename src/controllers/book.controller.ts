@@ -5,7 +5,6 @@ import { Book } from '../models/book.model';
 export const bookRoutes = Router();
 
 
-// Create Book
 bookRoutes.post('/', async (req: Request, res: Response) => {
   try {
     const book = new Book(req.body);
@@ -24,7 +23,6 @@ bookRoutes.post('/', async (req: Request, res: Response) => {
   }
 });
 
-// Get All Books
 bookRoutes.get('/', async (req: Request, res: Response) => {
   try {
     const { filter, sortBy = 'createdAt', sort = 'desc', limit = 10 } = req.query;
@@ -46,7 +44,6 @@ bookRoutes.get('/', async (req: Request, res: Response) => {
   }
 });
 
-// Get Book by ID
 bookRoutes.get('/:bookId', async (req: Request, res: Response) => {
   try {
     const book = await Book.findById(req.params.bookId);
@@ -71,7 +68,6 @@ bookRoutes.get('/:bookId', async (req: Request, res: Response) => {
   }
 });
 
-// Update Book
 bookRoutes.patch('/:bookId', async (req: Request, res: Response) => {
   const bookId = req.params.bookId;
   try {
@@ -100,7 +96,6 @@ bookRoutes.patch('/:bookId', async (req: Request, res: Response) => {
   }
 });
 
-// Delete Book
 bookRoutes.delete('/:bookId', async (req: Request, res: Response) => {
   try {
     const book = await Book.findByIdAndDelete(req.params.bookId);
