@@ -9,7 +9,7 @@ app.use(express.json());
 // Enable CORS
 app.use(
   cors({
-    origin: 'http://localhost:5174', // frontend URL
+    origin: 'https://redux-toolkit-assignment-b5-a4.vercel.app', // frontend URL
     methods: ['GET', 'POST', 'PATCH', 'DELETE'],
   })
 );
